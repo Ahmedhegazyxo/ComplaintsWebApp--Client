@@ -1,0 +1,226 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Hegazy\\ComplainClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\pages\\addcomplain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\pages\\addcomplain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\pages\\addcomplain.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\pages\\addcomplain.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\pages\\complainsavemodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\pages\\complainsavemodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\wwwroot\\m6 (1).jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\wwwroot\\m6 (1).jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\wwwroot\\icon-192.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\wwwroot\\icon-192.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\pages\\home.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\pages\\home.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5877022D-1A31-4C55-8D66-AC0CDDFDD71E}|ComplainClient\\ComplainClient.csproj|solutionrelative:complainclient\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "m6 (1).jpg - Bitmap [1999x1333, 32 bit, JPG]",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\m6 (1).jpg",
+              "RelativeDocumentMoniker": "ComplainClient\\wwwroot\\m6 (1).jpg",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\m6 (1).jpg - Bitmap [1999x1333, 32 bit, JPG]",
+              "RelativeToolTip": "ComplainClient\\wwwroot\\m6 (1).jpg - Bitmap [1999x1333, 32 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-10-22T18:09:00.022Z",
+              "EditorCaption": " - Bitmap [1999x1333, 32 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "icon-192.png - PNG [192x192, 8 bit, PNG]",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\icon-192.png",
+              "RelativeDocumentMoniker": "ComplainClient\\wwwroot\\icon-192.png",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\icon-192.png - PNG [192x192, 8 bit, PNG]",
+              "RelativeToolTip": "ComplainClient\\wwwroot\\icon-192.png - PNG [192x192, 8 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-10-22T18:08:57.69Z",
+              "EditorCaption": " - PNG [192x192, 8 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComplainSaveModal.razor",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\ComplainSaveModal.razor",
+              "RelativeDocumentMoniker": "ComplainClient\\Pages\\ComplainSaveModal.razor",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\ComplainSaveModal.razor",
+              "RelativeToolTip": "ComplainClient\\Pages\\ComplainSaveModal.razor",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T18:07:20.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Program.cs",
+              "RelativeDocumentMoniker": "ComplainClient\\Program.cs",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Program.cs",
+              "RelativeToolTip": "ComplainClient\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T18:07:09.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddComplain.razor.cs",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\AddComplain.razor.cs",
+              "RelativeDocumentMoniker": "ComplainClient\\Pages\\AddComplain.razor.cs",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\AddComplain.razor.cs",
+              "RelativeToolTip": "ComplainClient\\Pages\\AddComplain.razor.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAgwCkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T17:59:54.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Home.razor.cs",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\Home.razor.cs",
+              "RelativeDocumentMoniker": "ComplainClient\\Pages\\Home.razor.cs",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\Home.razor.cs",
+              "RelativeToolTip": "ComplainClient\\Pages\\Home.razor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T17:59:24.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "app.css",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\css\\app.css",
+              "RelativeDocumentMoniker": "ComplainClient\\wwwroot\\css\\app.css",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\css\\app.css",
+              "RelativeToolTip": "ComplainClient\\wwwroot\\css\\app.css",
+              "ViewState": "AgIAALAAAAAAAAAAAAAnwLoAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-22T17:58:14.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddComplain.razor",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\AddComplain.razor",
+              "RelativeDocumentMoniker": "ComplainClient\\Pages\\AddComplain.razor",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\AddComplain.razor",
+              "RelativeToolTip": "ComplainClient\\Pages\\AddComplain.razor",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAI0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T17:58:01.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Home.razor",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "ComplainClient\\Pages\\Home.razor",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\Home.razor",
+              "RelativeToolTip": "ComplainClient\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T17:57:49.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "ComplainClient\\Layout\\NavMenu.razor",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "ComplainClient\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T17:57:33.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "ComplainClient\\Layout\\MainLayout.razor",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "ComplainClient\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T17:57:25.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "index.html",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "ComplainClient\\wwwroot\\index.html",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\wwwroot\\index.html",
+              "RelativeToolTip": "ComplainClient\\wwwroot\\index.html",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-10-22T17:57:00.91Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = ComplainClient
+build_property.RootNamespace = ComplainClient
+build_property.ProjectDir = C:\.NET\ComplaintsClient\ComplainClient\ComplainClient\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\.NET\ComplaintsClient\ComplainClient\ComplainClient
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/AddComplain.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ29tcGxhaW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/ComplainSaveModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGxhaW5TYXZlTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/Components/Loading.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xMb2FkaW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/InquireAboutComplain.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5xdWlyZUFib3V0Q29tcGxhaW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/RecordedComplains.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjb3JkZWRDb21wbGFpbnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mvgaiw0u86
+
+[C:/.NET/ComplaintsClient/ComplainClient/ComplainClient/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-2b0ngoswoi

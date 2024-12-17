@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Hegazy\\ComplainClient\\ComplainClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF81907C-5DEF-4619-8427-933EABFDCDD7}|ComplainClient.csproj|e:\\hegazy\\complainclient\\complainclient\\pages\\inquireaboutcomplain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF81907C-5DEF-4619-8427-933EABFDCDD7}|ComplainClient.csproj|solutionrelative:pages\\inquireaboutcomplain.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InquireAboutComplain.razor",
+              "DocumentMoniker": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\InquireAboutComplain.razor",
+              "RelativeDocumentMoniker": "Pages\\InquireAboutComplain.razor",
+              "ToolTip": "E:\\Hegazy\\ComplainClient\\ComplainClient\\Pages\\InquireAboutComplain.razor",
+              "RelativeToolTip": "Pages\\InquireAboutComplain.razor",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-15T09:58:59.615Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
