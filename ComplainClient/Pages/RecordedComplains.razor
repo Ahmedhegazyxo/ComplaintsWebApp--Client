@@ -1,0 +1,132 @@
+﻿@page "/RecordedComplains"
+@using Base
+@inject HttpClient _client
+<PageTitle>@ProjectResources.RecordedComplains</PageTitle>
+
+<h1>@ProjectResources.RecordedComplains</h1>
+@if (isModalVisible)
+{
+    
+<div class="preview-container">
+        <h2>Complain Details</h2>
+
+        <div class="form-group">
+            <label>@ProjectResources.Id</label>
+            <p>@complain.Id</p>
+        </div>
+
+        <div class="form-group">
+            <label>@ProjectResources.MilitaryNumber</label>
+            <p>@complain.MilitaryNumber</p>
+        </div>
+
+        <div class="form-group">
+            <label>@ProjectResources.Rank</label>
+            <p>@complain.MilitaryRank</p>
+        </div>
+
+        <div class="form-group">
+            <label>@ProjectResources.PhoneNumberOne</label>
+            <p>@complain.PhoneNumber</p>
+        </div>
+
+        <div class="form-group">
+            <label>@ProjectResources.PhoneNumberTwo</label>
+            <p>@complain.SecondaryPhoneNumber</p>
+        </div>
+        @if (complain.ComplainAttachments is not null)
+        {
+            @foreach (var attachment in complain.ComplainAttachments)
+            {
+                <div>
+                    <p>@attachment.Attachment.AttachmentAttribute</p>
+                    @if (IsImage(attachment.Attachment.Notes))
+                    {
+                        <img src="data:image/png;base64,@Convert.ToBase64String(attachment.Attachment.Content)" alt="Preview" style="max-width: 200px;" />
+                    }
+                    else if (IsPdf(attachment.Attachment.Notes))
+                    {
+                        <iframe src="data:application/pdf;base64,@Convert.ToBase64String(attachment.Attachment.Content)" width="100%" height="500px"></iframe>
+                    }
+                    else
+                    {
+                        <a href="data:application/octet-stream;base64,@Convert.ToBase64String(attachment.Attachment.Content)" download="@attachment.Attachment.AttachmentAttribute">@ProjectResources.Download</a>
+                    }
+                </div>
+            }
+        }
+    </div>
+}
+else
+{
+    
+<div class="background-image">
+    <div class="card-container-page">
+        <div class="card-page">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@ProjectResources.Id</th>
+                        <th>@ProjectResources.Rank</th>
+                        <th>@ProjectResources.Name</th>
+                        <th>@ProjectResources.MilitaryNumber</th>
+                        <th>@ProjectResources.SSN</th>
+                        <th>@ProjectResources.NativeUnit</th>
+                        <th>@ProjectResources.CurrentUnit</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var complain in entities)
+                    {
+                        <tr>
+                            <td>@complain.Id</td>
+                            <td>@complain.MilitaryRank</td>
+                            <td>@complain.Name</td>
+                            <td>@complain.MilitaryNumber</td>
+                            <td>@complain.NationalId</td>
+                            <td>@complain.NativeUnit</td>
+                            <td>@complain.CurrentUnit</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm" @onclick="() => OpenDetailsModal(complain.Id)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+}
+@code
+{
+    List<Complain> entities = new List<Complain>();
+    Complain complain = new();
+    private bool isModalVisible;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            entities = await _client.GetFromJsonAsync<List<Complain>>("api/Complain");
+            await InvokeAsync(StateHasChanged);
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+    private async Task OpenDetailsModal(int id)
+    {
+        complain = await _client.GetFromJsonAsync<Complain>($"api/Complain/GetById/GetWithAllIncludes/{id}");
+        isModalVisible = true;
+    }
+    private bool IsImage(string fileName)
+    {
+        string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
+        return imageExtensions.Any(ext => fileName.EndsWith(ext, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private bool IsPdf(string fileName)
+    {
+        return fileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase);
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منظومة شكاوي القوات الجوية</title>
+    <base href="/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="airforce.png" />
+    <link href="Client.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="spinner-overlay">
+            <div class="spinner">
+            </div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        window.downloadFileFromBytes = function (fileName, byteBase64) {
+            const byteCharacters = atob(byteBase64);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+
+            const blob = new Blob([byteArray]);
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        };
+    </script>
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+
+            <p>
+                <strong>
+                       PBX - 12573 © تصميم و تنفيذ فرع نظم المعلومات بالقوات الجوية 2024
+                </strong>
+            </p>
+
+        </div>
+    </footer>
+</body>
+
+</html>

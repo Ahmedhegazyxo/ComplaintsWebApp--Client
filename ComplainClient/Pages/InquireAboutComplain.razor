@@ -1,0 +1,277 @@
+﻿@page "/InquireAboutComplain"
+@using Base
+@using ComplainClient.Pages.Components
+@inject HttpClient _client
+@inject NavigationManager _nvmgr
+
+<PageTitle>
+    @ProjectResources.InquireAboutComplain
+</PageTitle>
+
+<div class="background-image">
+    <div class="card-container-page">
+        <div class="card-page">
+            @if (isRoot)
+            {
+                <EditForm Model="@searchModel" OnValidSubmit="@HandleValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="SSN">@ProjectResources.SSN</label>
+                                <InputText id="SSN" class="form-control" @bind-Value="searchModel.NationalId" />
+                                <div class="text-danger">@ssnErrorMessage</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="MilitaryNumber">@ProjectResources.MilitaryNumber</label>
+                                <InputText id="MilitaryNumber" class="form-control" @bind-Value="searchModel.MilitaryNumber" />
+                                <div class="text-danger">@militaryNumberErrorMessage</div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="ComplainId">@ProjectResources.Id</label>
+                                <InputNumber id="ComplainId" class="form-control" @bind-Value="searchModel.ComplainId" />
+                                <div class="text-danger">@complainIdErrorMessage</div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-md-12">
+                                <button type="reset" class="btn btn-outline-primary m-2" onclick="@NavigateHome">الرئيسية</button>
+                                <button type="submit" class="btn btn-outline-success">@ProjectResources.Search</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <p>
+                                <strong class="fw-bolder">
+                                    @response
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </EditForm>
+            }
+            else
+            {
+                @if (!isLoading)
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="ssn">@ProjectResources.SSN</label>
+                            <InputText id="ssn" class="form-control" @bind-Value="@complain.NationalId" disabled />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="militaryNumber">@ProjectResources.MilitaryNumber</label>
+                                <InputText id="militaryNumber" class="form-control" @bind-Value="@complain.MilitaryNumber" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="rank">@ProjectResources.Rank</label>
+                                <InputSelect id="complainStatus" class="form-control" @bind-Value="@complain.MilitaryRankId" disabled>
+                                    @foreach (var status in militaryRanks)
+                                    {
+                                        <option value="@status.Id">@status.Name</option>
+                                    }
+                                </InputSelect>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">@ProjectResources.Name</label>
+                                <InputText id="name" class="form-control" @bind-Value="@complain.Name" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="complainStatus">@ProjectResources.ComplainStatus</label>
+                                <InputSelect id="complainStatus" class="form-control" @bind-Value="@complain.ComplainStatusId" disabled>
+                                    @foreach (var status in complainStatus)
+                                    {
+                                        <option value="@status.Id">@status.Name</option>
+                                    }
+                                </InputSelect>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="complainType">@ProjectResources.ComplainType</label>
+                                <InputSelect id="complainType" class="form-control" @bind-Value="@complain.ComplainTypeId" disabled>
+                                    @foreach (var type in complainTypes)
+                                    {
+                                        <option value="@type.Id">@type.Name</option>
+                                    }
+                                </InputSelect>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="complainBody">@ProjectResources.ComplainBody</label>
+                            <textarea id="complainBody" class="form-control" disabled>@complain.ComplainBody</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="complainReply">@ProjectResources.ComplainReply</label>
+                            <textarea id="complainReply" class="form-control" disabled>@complain.ComplainReply</textarea>
+                        </div>
+                    </div>
+
+            @inject IJSRuntime JS
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <h5>@ProjectResources.Attachments</h5>
+                        </div>
+                        <div class="row">
+                            <ul class="list-group">
+                                @if (complain.ComplainAttachments?.Any() == true)
+                                {
+                                    @foreach (var attachment in complain.ComplainAttachments)
+                                    {
+
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            @attachment.Notes
+                                            <p>@attachment.Attachment.AttachmentAttribute</p>
+                                            <button class="btn btn-outline-primary" @onclick="() => DownloadAttachment(attachment)">
+                                                @ProjectResources.Download
+                                            </button>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-outline-success m-2" onclick="@NavigateHome">الرئيسية</button>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <Loading />
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    ComplainSearchModel searchModel = new();
+    HttpResponseMessage responseMessage = new();
+    private bool isComplainFound = false;
+    private bool isRoot = true;
+    private bool isLoading = false;
+    private string response;
+    private string ssnErrorMessage;
+    private string militaryNumberErrorMessage;
+    private string complainIdErrorMessage;
+    Complain complain = new();
+
+    private List<ComplainStatus> complainStatus = new();
+    private List<ComplainType> complainTypes = new();
+    private List<MilitaryRank> militaryRanks = new();
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                complainStatus = await _client.GetFromJsonAsync<List<ComplainStatus>>("api/complainstatus");
+                complainTypes = await _client.GetFromJsonAsync<List<ComplainType>>("api/complainType");
+                militaryRanks = await _client.GetFromJsonAsync<List<MilitaryRank>>("api/militaryRank");
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+    private void ValidateBeforeSubmit(ComplainSearchModel searchModel)
+    {
+        ssnErrorMessage = string.Empty;
+
+
+
+
+        complainIdErrorMessage = string.Empty;
+        militaryNumberErrorMessage = string.Empty;
+        searchModel.IsValidEntity = true;
+
+        if (string.IsNullOrEmpty(searchModel.NationalId))
+        {
+            ssnErrorMessage = ProjectResources.IsRequired;
+            searchModel.IsValidEntity = false;
+        }
+        else if (searchModel.NationalId.Length != 14 || !searchModel.NationalId.All(char.IsDigit))
+        {
+            ssnErrorMessage = ProjectResources.SSNValidationMessage;
+            searchModel.IsValidEntity = false;
+        }
+        if (string.IsNullOrEmpty(searchModel.MilitaryNumber))
+        {
+            militaryNumberErrorMessage = ProjectResources.IsRequired;
+            searchModel.IsValidEntity = false;
+        }
+        if (searchModel.ComplainId <= 0)
+        {
+            complainIdErrorMessage = ProjectResources.ComplainIdErrorMessage;
+            searchModel.IsValidEntity = false;
+        }
+    }
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            ValidateBeforeSubmit(searchModel);
+            if (searchModel.IsValidEntity)
+            {
+
+                isLoading = true;   
+                response = ProjectResources.SearchOngoing;
+                isComplainFound = false;
+                responseMessage = await _client.PostAsJsonAsync("api/Complain/Search", searchModel);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    complain = await responseMessage.Content.ReadFromJsonAsync<Complain>();
+                    if (complain is not null)
+                    {
+                        isRoot = false;
+                        isComplainFound = true;
+                        isLoading = false;
+                    }
+                }
+                else 
+                {
+                    response = ProjectResources.NoEntityWasFound;
+                }
+            }
+        }
+        catch (Exception exception)
+        {
+            response = ProjectResources.NoEntityWasFound;
+        }
+    }
+    private async Task DownloadAttachment(ComplainAttachment attachment)
+    {
+        var fileBase64 = Convert.ToBase64String(attachment.Attachment.Content);
+
+        await JS.InvokeVoidAsync("downloadFileFromBytes", attachment.Attachment.FileName, fileBase64);
+    }
+    private void NavigateHome()
+    {
+        _nvmgr.NavigateTo("/");
+    }
+}

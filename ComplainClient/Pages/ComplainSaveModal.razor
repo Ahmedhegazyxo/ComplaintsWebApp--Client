@@ -1,0 +1,76 @@
+﻿@using Base
+@code {
+    [Parameter] public bool IsVisible { get; set; }
+
+    [Parameter] public string Title { get; set; }
+
+    [Parameter] public Complain complain { get; set; }
+
+    [Parameter] public EventCallback OnConfirm { get; set; }
+
+
+
+    private async Task HandleConfirm()
+
+    {
+
+        await OnConfirm.InvokeAsync();
+
+    }
+}
+
+@if (IsVisible)
+
+{
+    <div class="modal-overlay">
+        <div class="card-page">
+            <h5>@Title</h5>
+            <h4><strong>@ProjectResources.Id</strong></h4>
+            <h3 style="color:red"><strong>@complain.Id</strong></h3>
+            <p>
+                @ProjectResources.ComplainSaveMessage
+                <div>
+                    <strong>@ProjectResources.WithRank</strong>
+                    @complain.MilitaryRank.Name
+                </div>
+                <div>
+                    <strong>@ProjectResources.WithName</strong>
+                    @complain.Name
+                </div>
+            </p>
+            <p>
+                @ProjectResources.InquireAboutComplainHelp
+            </p>
+            <button @onclick="HandleConfirm" class="btn btn-outline-primary">@ProjectResources.ReturnHome</button>
+        </div>
+    </div>
+}
+
+<style>
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1050; /* Make sure the modal is on top */
+    }
+
+    .modal {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+    }
+
+        .modal button {
+            margin: 0.5rem;
+        }
+</style>

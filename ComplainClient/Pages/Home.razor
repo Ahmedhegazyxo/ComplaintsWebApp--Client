@@ -1,0 +1,12 @@
+﻿@page "/"
+@using Base
+@inject HttpClient _client
+@inject NavigationManager _nvmgr
+<PageTitle>@ProjectResources.ProjectTitle</PageTitle>
+<div class="background-image">
+    <div class="card-page">
+        <h2>@ProjectResources.ProjectTitle</h2>
+        <button class="btn btn-outline-primary btn-lg m-1" @onclick="NavigateToInquireAboutComplain">@ProjectResources.InquireAboutComplain</button>
+        <button class="btn btn-outline-success btn-lg m-1" @onclick="NavigateToAddComplains">@ProjectResources.AddComplaints</button>
+    </div>
+</div>

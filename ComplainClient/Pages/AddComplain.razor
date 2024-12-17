@@ -1,0 +1,181 @@
+﻿@using Base
+@using ComplainClient.Pages.Components
+@page "/AddComplain"
+@inject HttpClient _client
+@inject NavigationManager _navmgr
+<PageTitle>
+    @ProjectResources.AddComplaints
+</PageTitle>
+@if (!isShowModal)
+{
+    <div class="background-image">
+        <div class="card-page">
+            @if (isLoading)
+            {
+                <Loading /> 
+            }
+            <EditForm Model="@complain" OnValidSubmit="@HandleValidSubmit">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="complainType">@ProjectResources.ComplainType</label>
+                            <InputSelect id="complainTypes" class="form-control" TValue="int?" Value="complain.ComplainTypeId" ValueExpression="()=>complain.ComplainTypeId" ValueChanged="OnComplainTypeIdChanged" disabled="@(complainTypes is null || complainTypes.Count() == 0)">
+                                @foreach (var type in complainTypes)
+                                {
+                                    <option value="@type.Id">@type.Name</option>
+                                }
+                            </InputSelect>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="SSN">@ProjectResources.SSN</label>
+                            <InputText id="SSN" class="form-control" @bind-Value="@complain.NationalId"/>
+                            <ValidationMessage For="@(() => complain.NationalId)" />
+                            <div class="text-danger">@ssnErrorMessage</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="MilitaryNumber">@ProjectResources.MilitaryNumber</label>
+                            <InputText id="MilitaryNumber" class="form-control" Value="@complain.MilitaryNumber" ValueExpression="()=>complain.MilitaryNumber" ValueChanged="OnMilitaryNumberChanged" />
+                            <ValidationMessage For="@(() => complain.MilitaryNumber)" />
+                            <div class="text-danger">@militaryNumberErrorMessage</div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label for="Rank">@ProjectResources.Rank</label>
+                            <InputSelect id="complainTypes" class="form-control" TValue="int" Value="complain.MilitaryRankId" ValueExpression="()=>complain.MilitaryRankId" ValueChanged="OnMilitaryRankChanged" disabled="@(militaryRanks is null || militaryRanks.Count() == 0)">
+                                @foreach (var type in militaryRanks)
+                                {
+                                    <option value="@type.Id">@type.Name</option>
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => complain.MilitaryRankId)" />
+                            <div class="text-danger">@rankErrorMessage</div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Name">@ProjectResources.Name</label>
+                            <InputText id="Name" class="form-control" Value="@complain.Name" ValueExpression="()=>complain.Name" ValueChanged="OnNameChanged" />
+                            <ValidationMessage For="@(() => complain.Name)" />
+                            <div class="text-danger">@nameErrorMessage</div>
+
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label for="NativeUnit">@ProjectResources.NativeUnit</label>
+                            <InputText id="NativeUnit" class="form-control" Value="@complain.NativeUnit" ValueExpression="()=>complain.NativeUnit" ValueChanged="ComplainNativeUnitChanged"/>
+                            <div class="text-danger">@nativeUnitErrorMessage</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="CurrentUnit">@ProjectResources.CurrentUnit</label>
+                            <InputText id="CurrentUnit" class="form-control" Value="@complain.CurrentUnit" ValueExpression="()=>complain.CurrentUnit" ValueChanged="ComplainCurrentUnitChanged" />
+                            <div class="text-danger">@currentUnitErrorMessage</div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label for="PhoneNumber">@ProjectResources.PhoneNumberOne</label>
+                            <InputText id="PhoneNumber" class="form-control" @bind-Value="complain.PhoneNumber" />
+                            <div class="text-danger">@mainPhoneNumberErrorMessage</div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="SecondaryPhoneNumber">@ProjectResources.SecondaryPhoneNumber</label>
+                            <InputText id="SecondaryPhoneNumber" class="form-control" @bind-Value="complain.SecondaryPhoneNumber" />
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="complainSubject">@ProjectResources.Subject</label>
+                                    <InputText id="complainSubject" class="form-control" Value="@subjectInComplainStatement" ValueExpression="()=>subjectInComplainStatement" ValueChanged="OnSubjectInComplainStatementChanged" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Complain">@ProjectResources.ComplainBody</label>
+                                    <InputTextArea id="Complain" class="form-control" Value="@complainMessage" ValueExpression="()=>complainMessage" ValueChanged="ComplainMessageChanged" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ComplainBody">@ProjectResources.Complain</label>
+                                    <InputTextArea id="ComplainBody" class="form-control" @bind-Value="complain.ComplainBody" disabled/>
+                                </div>
+                            </fieldset>
+                            <div class="text-danger">@complainBodyErrorMessage</div>
+
+                        </div>
+                    </div>
+                    <div class="card-page-full-width">
+                        <div class="row">
+                            <p><strong>@ProjectResources.Attachments</strong></p>
+                            <div class="form-group col-md-6">
+                                <label for="attachment1">@militaryCardAttachment.Attachment.AttachmentAttribute</label>
+                                <InputFile accept=".jpg,.jpeg,.png,.pdf" id="attachment1" class="form-control" OnChange="@(e => OnInputFileChange(e, AttachmentType.MilitaryCard))" />
+                                <div class="text-danger">@militaryCardAttachmentErrorMessage</div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="attachment2">@nationalCardAttachment.Attachment.AttachmentAttribute</label>
+                                <InputFile accept=".jpg,.jpeg,.png,.pdf" id="attachment2" class="form-control" OnChange="@(e => OnInputFileChange(e, AttachmentType.NationalId))" />
+                                <div class="text-danger">@nationalCardAttachmentErrorMessage</div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="form-group col-md-4">
+                                    <label for="attachment2">@aboutComplainAttachment.Attachment.AttachmentAttribute</label>
+                                    <InputFile accept=".jpg,.jpeg,.png,.pdf" id="attachment2" class="form-control" OnChange="@(e => OnInputFileChange(e, AttachmentType.ComplainAttachment))" />
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <button type="reset" class="btn btn-outline-success m-2" onclick="@NavigateHome">الرئيسية</button>
+                            <button type="reset" class="btn btn-outline-danger m-2" onclick="@CancelForm">@ProjectResources.Cancel</button>
+                            <button type="submit" class="btn btn-outline-primary m-2">@ProjectResources.Save</button>
+
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+
+
+else if (isShowModal && isLoading)
+{
+    <div class="background-image">
+        <div class="card-page">
+            <h1>
+                @ProjectResources.RecordingComplains
+            </h1>
+        </div>
+    </div>
+}
+
+
+
+else
+
+
+
+{
+    <ComplainSaveModal IsVisible="@isShowModal"
+                       Title="@ProjectResources.ComplainSaveMessageTitle"
+                       complain="@savedComplain"
+                       OnConfirm="@OnModalConfirm" />
+}
